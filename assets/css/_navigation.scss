@@ -1,0 +1,133 @@
+// Navigation
+
+/*------------------------------------*\
+    Flaunt JS Navigation
+\*------------------------------------*/
+
+.nav {
+	position:relative;
+
+	@include respond-to(bp-small-only) {
+		padding-top: 2em; // damit Mobile-Menü-Button nicht innerhalb der Navi stehtl
+	}
+}
+
+.nav-list {
+	@include respond-to(bp-small-only) {
+		display: none; // Navigation auf Handy ausblenden
+	}
+}
+.nav-item {
+	position:relative;
+
+	a {
+		display:block;
+		color:#FFF;
+		padding: 1em;
+		border-bottom: 1px solid #368f99;
+
+		&:hover {
+			background:#3da6b2;
+		}
+	}
+
+	@include respond-to(bp-medium) {
+		display: inline-block; // nebeneinander anordnen auf großen Screens
+	}
+}
+.nav-item:hover .nav-submenu {
+	display: none;
+	background: $brand-color-contrast;
+
+	@include respond-to(bp-medium) {
+		display:block;
+	}
+}
+
+/* Navigation submenu */
+.nav-submenu {
+	display:none;
+	position:static;
+	width:100%;
+	background: $brand-color-contrast;
+
+
+	@include respond-to(bp-medium) {
+		position:absolute;
+		left:0;
+	}
+
+	a {
+		display:block;
+	}
+}
+
+/* Handheld Aufklapp-Button */
+.nav-mobile {
+
+	@include respond-to(bp-medium) {
+		display:none; /* Hide from browsers that don't support media queries */
+	}
+
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	right:0;
+	padding: 0.5em;
+	background: $brand-color-contrast;
+	border-radius: 5px;
+
+	&:before {
+		content: "Menü";
+		margin-right: 10px;
+	}
+
+	&:after {
+		font-family: FontAwesome;
+		content: $fa-var-bars;
+	}
+}
+
+/* Mobile navigation, clickable area for revealing <ul> */
+.nav-click {
+	position:absolute;
+	top:0;
+	right:0;
+	cursor:pointer;
+
+	@include respond-to(bp-medium) {
+		display:none;
+	}
+
+	i { // Aufklick-Button mit Icon für Subnavi
+		display:block;
+		font-style: normal;
+		color: #fff;
+		background: red;
+
+		&:after {
+			font-family: FontAwesome;
+			content: $fa-var-angle-down;
+			font-size: 2.4em;
+			display: block;
+			padding: 0.15em 0.3em;
+		}
+	}
+	&:hover {}
+}
+
+.nav-rotate {
+	@include transform(rotate(180deg));
+}
+
+/*------------------------------------*\
+    Media Queries
+\*------------------------------------*/
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+
+	.nav-submenu {
+		position:static;
+		width:100%;
+	}
+}

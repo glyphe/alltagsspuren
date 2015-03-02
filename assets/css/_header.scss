@@ -1,1 +1,11 @@
 // Alles im Header
+
+.slogan {
+	@include respond-to(bp-small-only) {
+		display: none;
+	}
+}
+
+.nav-meta, .nav-main {
+	background-color: $brand-color-contrast;
+}

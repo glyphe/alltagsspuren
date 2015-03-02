@@ -1,10 +1,12 @@
 // Generelle Typo-Settings
 
-body {}
+body {
+	font-family: $font-family;
+}
 
 ::selection {
-  background: $brand-color-prim;
-  color: $brand-color-sec;
+  background: $brand-color-contrast;
+  color: #fff;
 }
 
 h1 {}

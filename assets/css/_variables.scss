@@ -1,15 +1,16 @@
 // FARBEN
 
-$brand-color-prim: #fff;
-$brand-color-sec: #fff;
-$brand-color-tir: #fff;
-$brand-color-contrast: #fff;
+$brand-color-prim: rgb(24,150,56);
+$brand-color-sec: rgb(169,189,71);
+$brand-color-tir: rgb(77,212,172);
+$brand-color-contrast: rgb(62,167,179);
 $alert-color: #f00;
-$text-color-prim: #000;
+$text-color-prim: rgb(102,102,102);
 $text-color-sec: #000;
 $text-color-footer: #fff;
 $background-color: #000;
-$background-color-footer: #000;
+$background-color-content: rgb(230,230,230);
+$background-color-footer: $brand-color-contrast;
 
 $gray-1: rgb(200,200,200);
 $gray-3: rgb(160,160,160);
@@ -25,7 +26,7 @@ $max-width-images: 80%;
 $inner-distance: 5%;
 
 // TYPO
-$font-family: Panton, "nudista-web", Arial, sans-serif;
+$font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
 
 // BREAKPOINTS
 $bp-small: 549px;
