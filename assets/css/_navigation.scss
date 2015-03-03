@@ -1,14 +1,13 @@
-// Navigation
+// Hauptnavigation
 
-/*------------------------------------*\
-    Flaunt JS Navigation
-\*------------------------------------*/
+
+.nav-main {
+	background-color: $brand-color-contrast;
+}
 
 .nav {
-	position:relative;
-
-	@include respond-to(bp-small-only) {
-		padding-top: 2em; // damit Mobile-Menü-Button nicht innerhalb der Navi stehtl
+	@include respond-to(bp-medium) {
+		position:relative;
 	}
 }
 
@@ -20,47 +19,69 @@
 .nav-item {
 	position:relative;
 
-	a {
-		display:block;
-		color:#FFF;
-		padding: 1em;
-		border-bottom: 1px solid #368f99;
-
-		&:hover {
-			background:#3da6b2;
-		}
-	}
-
 	@include respond-to(bp-medium) {
 		display: inline-block; // nebeneinander anordnen auf großen Screens
 	}
 }
+
+.nav-item a {
+	display:block;
+	text-decoration: none;
+	color:#FFF;
+	padding: 1em;
+	@include transition(all 0.3s ease-out);
+
+	@include respond-to(bp-small-only) {
+		border-bottom: 2px solid $nav-border-color;
+	}
+	@include respond-to(bp-medium) {
+		border-right: 2px solid $nav-border-color;
+	}
+
+	&:hover {
+		background: lighten($brand-color-contrast,10%);
+	}
+}
+
+.nav-item a.current { // Aktuelle gewählter Menüpunkt
+	color: $nav-text-color-current;
+	background: lighten($brand-color-contrast,20%);
+}
+
 .nav-item:hover .nav-submenu {
 	display: none;
-	background: $brand-color-contrast;
 
-	@include respond-to(bp-medium) {
-		display:block;
-	}
+	// Einblenden des Submenüs bei Hover auf Desktop-Auflösungen
+	// @include respond-to(bp-medium) {
+	// 	display:block;
+	// }
 }
 
 /* Navigation submenu */
 .nav-submenu {
-	display:none;
-	position:static;
-	width:100%;
-	background: $brand-color-contrast;
-
+	display: none;
+	position: static;
 
 	@include respond-to(bp-medium) {
-		position:absolute;
-		left:0;
-	}
-
-	a {
-		display:block;
+		position: absolute;
+		left: 0;
 	}
 }
+
+.nav-submenu a {
+	background: darken($brand-color-contrast,8%);
+
+	@include respond-to(bp-small-only) {
+		padding-left: 2em;
+		border-bottom-color: darken($nav-border-color, 10%);
+	}
+}
+
+.nav-submenu a.current { // Aktiver Menüpunkt im Submenü
+	background: lighten($brand-color-contrast,10%);
+	color: darken($nav-text-color-current,2%);
+}
+
 
 /* Handheld Aufklapp-Button */
 .nav-mobile {
@@ -69,17 +90,22 @@
 		display:none; /* Hide from browsers that don't support media queries */
 	}
 
-	cursor:pointer;
-	position:absolute;
-	top:0;
-	right:0;
-	padding: 0.5em;
+	cursor: pointer;
+	position: absolute;
+	top: 15px;
+	right: $inner-distance;
+	padding: 0.5em 0.7em 0.4em;
 	background: $brand-color-contrast;
-	border-radius: 5px;
+	color: #fff;
+	border-radius: 3px;
+
+	&:hover, &:active {
+		background: darken($brand-color-contrast,10%);
+	}
 
 	&:before {
 		content: "Menü";
-		margin-right: 10px;
+		margin-right: 0.5em;
 	}
 
 	&:after {
@@ -93,6 +119,7 @@
 	position:absolute;
 	top:0;
 	right:0;
+	bottom:0;
 	cursor:pointer;
 
 	@include respond-to(bp-medium) {
@@ -103,14 +130,14 @@
 		display:block;
 		font-style: normal;
 		color: #fff;
-		background: red;
+		background: darken($brand-color-contrast,5%);
 
 		&:after {
 			font-family: FontAwesome;
 			content: $fa-var-angle-down;
 			font-size: 2.4em;
 			display: block;
-			padding: 0.15em 0.3em;
+			padding: 0.15em 0.3em 0.2em;
 		}
 	}
 	&:hover {}

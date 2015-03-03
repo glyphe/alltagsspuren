@@ -4,6 +4,43 @@
   box-sizing: border-box;
 }
 
-.content-container {
+body {
+	background-color: rgb(130,140,48);
+}
+
+.wrapper {
+	max-width: $max-width;
+	margin: 0 auto;
+	position: relative;
+}
+
+.content-wrapper { // Wrapper um den Inhaltsbereich
+	@extend .wrapper;
+
+	@include respond-to(bp-large) {
+		padding: 0 12px;
+		background: url(../img/bg/bg-ribbon-top-left.svg) left top no-repeat,
+		url(../img/bg/bg-ribbon-top-right.svg) right top no-repeat,
+		url(../img/bg/bg-ribbon-bottom-left.svg) left bottom no-repeat,
+		url(../img/bg/bg-ribbon-bottom-right.svg) right bottom no-repeat;
+		background-size: 12px, 12px, 12px, 12px;
+	}
+}
+
+.content { // Der eigentliche Inhaltsbereich
 	background-color: $background-color-content;
+	padding: 2em $inner-distance 4em;
+	border-top: 4px solid #bde1e5;
+}
+
+.desktop-hide {  // Element bei Desktop-Auflösungen ausblenden
+	@include respond-to(bp-medium) {
+		display: none !important;
+	}
+}
+
+.handheld-hide { // Element bei Handheld-Auflösungen ausblenden
+	@include respond-to(bp-small-only) {
+		display: none !important;
+	}
 }

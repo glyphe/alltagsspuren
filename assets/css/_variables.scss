@@ -12,13 +12,17 @@ $background-color: #000;
 $background-color-content: rgb(230,230,230);
 $background-color-footer: $brand-color-contrast;
 
-$gray-1: rgb(200,200,200);
-$gray-3: rgb(160,160,160);
-$gray-2: rgb(120,120,120);
+$gray-light-1: rgb(225,225,225);
+$gray-light-2: rgb(204,204,204);
+$gray-mid-1: rgb(153,153,153);
+$gray-mid-2: rgb(128,128,128);
+
+$nav-border-color: rgb(54,143,153);
+$nav-text-color-current: rgb(47,125,134);
 
 // GRÖSSEN
 
-$max-width: 1200px; // wird auch vom neat Grid verwendet
+$max-width: 1140px; // wird auch vom neat Grid verwendet
 $max-width-inner-container: 1000px;  // Für einzelne Module im Shop
 $max-width-text: 45em;
 $max-width-images: 80%;

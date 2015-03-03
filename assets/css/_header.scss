@@ -1,11 +1,79 @@
 // Alles im Header
 
-.slogan {
-	@include respond-to(bp-small-only) {
-		display: none;
+
+// #### LOGO ###
+
+.logo {
+	background-color: #fff;
+	margin: 10px;
+
+	width: 10em;
+	border: 2px solid $brand-color-contrast;
+	border-radius: 5px;
+	padding: 0.6em 0.5em 0.4em;
+	box-shadow: 0 0 0 1px #fff;
+
+	@include respond-to(bp-medium) {
+		width: 15em;
+		border-width: 3px;
+		border-radius: 7px;
+		padding: 1em 0.75em 0.6em;
+	}
+	@include respond-to(bp-large) {
+		width: 18em;
+		border-width: 5px;
+		border-radius: 10px;
+		padding: 3em 1.7em 1em;
+		box-shadow: 0 0 0 2px #fff;
+	}
+
+	a:link, a:visited {
+		text-decoration: none;
+		color: $brand-color-contrast;
 	}
 }
 
-.nav-meta, .nav-main {
-	background-color: $brand-color-contrast;
+.slogan {
+	display: none;
+	text-align: center;
+	text-decoration: none;
+	padding: 1em 0 0;
+
+	@include respond-to(bp-large) {
+		display: block;
+	}
 }
+
+// #### Login ###
+
+.nav-login {
+	@extend .handheld-hide; // Ausblenden auf Handheld-Größen
+
+	position: absolute;
+	right: $inner-distance;
+	top: 0;
+
+	li {
+		display: inline-block;
+
+		&:after {
+			content: "|";
+			color: $gray-light-2;
+		}
+		&:last-child:after {
+			content: none;
+		}
+	}
+
+	a:link, a:visited {
+		text-decoration: none;
+		color: $brand-color-prim;
+	}
+}
+
+.login-link:before {
+	font-family: FontAwesome;
+	content: $fa-var-sign-in;
+	margin-right: 0.3em;
+}
+

@@ -15,9 +15,17 @@
 	%body
 
 		%header.header
-			.logo
-				%a(href="#")
-					%img(src="<!-- @path logo -->" alt="Alltagsspuren")
-					.slogan	Nachhaltige Mobilität in<br>ländlichen Gemeinden
+			.wrapper
+				.logo
+					%a(href="#")
+						%img(src="<!-- @path logo -->" alt="Alltagsspuren")
+						.slogan	Nachhaltige Mobilität in<br>ländlichen Gemeinden
 
-<!-- @include _nav -->
+				%nav.nav-login
+					%ul
+						%li
+							%a.login-link(href="#") Login
+						%li
+							%a(href="#") Kontakt
+
+				<!-- @include _nav -->

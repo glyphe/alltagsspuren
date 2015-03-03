@@ -1,5 +1,6 @@
 // FOOTER
 .footer {
+	@extend .wrapper;
 	background-color: $background-color-footer;
 	color: $text-color-footer;
 }
