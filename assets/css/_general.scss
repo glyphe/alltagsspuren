@@ -4,8 +4,31 @@
   box-sizing: border-box;
 }
 
+.desktop-hide {  // Element bei Desktop-Auflösungen ausblenden
+	@include respond-to(bp-medium) {
+		display: none !important;
+	}
+}
+
+.handheld-hide { // Element bei Handheld-Auflösungen ausblenden
+	@include respond-to(bp-small-only) {
+		display: none !important;
+	}
+}
+
+
+
+// ### BASIC LAYOUT ###
+
 body {
 	background-color: rgb(130,140,48);
+
+	@include respond-to(bp-medium) {
+		padding: 0 $outer-distance-medium;
+	}
+	@include respond-to(bp-large) {
+		padding: 0 $outer-distance-large;
+	}
 }
 
 .wrapper {
@@ -31,16 +54,21 @@ body {
 	background-color: $background-color-content;
 	padding: 2em $inner-distance 4em;
 	border-top: 4px solid #bde1e5;
-}
 
-.desktop-hide {  // Element bei Desktop-Auflösungen ausblenden
-	@include respond-to(bp-medium) {
-		display: none !important;
+	@include respond-to(bp-large) {
+		@include outer-container;
 	}
 }
 
-.handheld-hide { // Element bei Handheld-Auflösungen ausblenden
-	@include respond-to(bp-small-only) {
-		display: none !important;
+.sidebar {
+	@include respond-to(bp-large) {
+		@include span-columns(3);
 	}
 }
+
+.main {
+	@include respond-to(bp-large) {
+		@include span-columns(9);
+	}
+}
+

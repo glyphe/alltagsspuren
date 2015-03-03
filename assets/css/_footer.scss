@@ -3,4 +3,57 @@
 	@extend .wrapper;
 	background-color: $background-color-footer;
 	color: $text-color-footer;
+	padding: 1em $inner-distance;
+
+	nav {
+		@include respond-to(bp-large) {
+			@include clearfix;
+			@include display(flex);
+			@include align-items(baseline);
+			@include justify-content(space-between);
+		}
+	}
+
+	@include respond-to(bp-medium) {
+		margin-bottom: 2em;
+	}
+}
+
+.nav-footer li, .credits li {
+	@include respond-to(bp-medium) {
+		display: inline-block;
+
+		&:after {
+			content: "|";
+			color: $gray-light-2;
+		}
+		&:last-child:after {
+			content: none;
+		}
+	}
+}
+
+.nav-footer a, .credits a {
+	text-decoration: none;
+	color: #fff;
+	@include transition(all 0.3s ease-out);
+
+	&:hover {
+		color: $nav-text-color-current;
+	}
+}
+
+.nav-footer {
+	@include respond-to(bp-large) {
+		float: left;
+	}
+}
+
+.credits {
+	font-size: 0.8em;
+	@include respond-to(bp-large) {
+		float: right;
+		text-align: right;
+		@include align-self(flex-end);
+	}
 }

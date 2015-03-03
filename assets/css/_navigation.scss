@@ -3,11 +3,19 @@
 
 .nav-main {
 	background-color: $brand-color-contrast;
+
+	@include respond-to(bp-medium) {
+		position: relative;
+		@include clearfix;
+	}
+	@include respond-to(bp-large) {
+		padding: 0 $bg-ribbon-width;
+	}
 }
 
 .nav {
 	@include respond-to(bp-medium) {
-		position:relative;
+
 	}
 }
 
@@ -15,12 +23,30 @@
 	@include respond-to(bp-small-only) {
 		display: none; // Navigation auf Handy ausblenden
 	}
+	@include respond-to(bp-medium-only) {
+		// @include display(flex);
+		// @include flex-wrap(wrap);
+		// @include align-items(stretch);
+	}
 }
+
 .nav-item {
 	position:relative;
 
 	@include respond-to(bp-medium) {
-		display: inline-block; // nebeneinander anordnen auf großen Screens
+		float: left; // nebeneinander anordnen auf großen Screens
+	}
+	@include respond-to(bp-medium-only) {
+		text-align: center;
+		font-size: 0.8em;
+		// width: 20%;
+		// max-width: 30%;
+		// @include flex-grow(1);
+	}
+	@include respond-to(bp-large) {
+		&:first-child {
+			border-left: 2px solid $nav-border-color;
+		}
 	}
 }
 
@@ -29,17 +55,25 @@
 	text-decoration: none;
 	color:#FFF;
 	padding: 1em;
+
 	@include transition(all 0.3s ease-out);
 
 	@include respond-to(bp-small-only) {
 		border-bottom: 2px solid $nav-border-color;
+		padding-left: $inner-distance // damit alles an der linken seite ausgerichtet ist
 	}
 	@include respond-to(bp-medium) {
 		border-right: 2px solid $nav-border-color;
 	}
-
+	@include respond-to(bp-medium-only) {
+		border-bottom: 2px solid $nav-border-color;
+	}
 	&:hover {
 		background: lighten($brand-color-contrast,10%);
+	}
+	&:active, &:focus {
+		background-color: darken($brand-color-contrast,10%);
+		color: $background-color-content;
 	}
 }
 
@@ -72,7 +106,7 @@
 	background: darken($brand-color-contrast,8%);
 
 	@include respond-to(bp-small-only) {
-		padding-left: 2em;
+		padding-left: 2em;  // Einrücken
 		border-bottom-color: darken($nav-border-color, 10%);
 	}
 }
@@ -85,14 +119,13 @@
 
 /* Handheld Aufklapp-Button */
 .nav-mobile {
-
 	@include respond-to(bp-medium) {
 		display:none; /* Hide from browsers that don't support media queries */
 	}
 
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
+	top: 3px;
 	right: $inner-distance;
 	padding: 0.5em 0.7em 0.4em;
 	background: $brand-color-contrast;
@@ -147,14 +180,78 @@
 	@include transform(rotate(180deg));
 }
 
-/*------------------------------------*\
-    Media Queries
-\*------------------------------------*/
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+// Schreib-deine-Geschichte-Link
+.link-add-story {
+	@include respond-to(bp-large) {
+		float: right;
+		width: 9.5em;
+		font-size: 0.9em;
+		line-height: 1.1;
+		margin-top: 0.5em;
+	}
+	@include respond-to(bp-medium-only) {
+		text-transform: capitalize; // Alle Anfangsbuchstaben in Großbuchstaben
+		span {
+			display: none; // Blendet „schreib“ aus
+		}
+	}
 
-	.nav-submenu {
-		position:static;
-		width:100%;
+	a {
+		@include respond-to(bp-large) {
+			background-color: #fff;
+			color: $brand-color-contrast;
+			border-radius: 5px;
+			padding: 0.3em 0.7em;
+			border: none;
+		}
+
+		&:after {
+			font-family: FontAwesome;
+			content: $fa-var-pencil;
+			margin-left: 0.3em;
+
+			@include respond-to(bp-large) {
+				font-size: 1.7em;
+				position: absolute;
+				top: 0.3em;
+				right: 0.4em;
+			}
+		}
+		&:hover, &:focus, &:active {
+			@include respond-to(bp-large) {
+				background: $brand-color-sec;
+				color: #fff;
+			}
+		}
 	}
 }
+
+
+// ### Subnavigation ###
+
+.nav-sub a {
+	display: block;
+	background: url(../img/bg/bg-subnavi.png) right no-repeat lighten($brand-color-contrast,20%);
+	background-size: contain;
+	color: $nav-text-color-current;
+	padding: 0.7em 1em 0.6em;
+	margin-bottom: 3px;
+	text-decoration: none;
+	@include transition(all 0.3s ease-out);
+
+	&:hover {
+		background-color: lighten($brand-color-contrast,10%);
+	}
+	&:active, &:focus {
+		background-color: darken($brand-color-contrast,10%);
+		color: $background-color-content;
+	}
+}
+
+.nav-sub a.current {
+	color: #fff;
+	background: url(../img/bg/bg-subnavi-arrow.png) right no-repeat $brand-color-contrast;
+	background-size: contain;
+}
+

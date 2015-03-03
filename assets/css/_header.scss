@@ -4,27 +4,50 @@
 // #### LOGO ###
 
 .logo {
-	background-color: #fff;
-	margin: 10px;
+	margin: 1em 0 0 $inner-distance;
+	width: 9em;
 
-	width: 10em;
-	border: 2px solid $brand-color-contrast;
-	border-radius: 5px;
-	padding: 0.6em 0.5em 0.4em;
-	box-shadow: 0 0 0 1px #fff;
+	img {
+		width: 100%;
+	}
 
 	@include respond-to(bp-medium) {
-		width: 15em;
-		border-width: 3px;
-		border-radius: 7px;
-		padding: 1em 0.75em 0.6em;
+		width: 12em;
+		margin-left: 1px; // breite der weißen box-Shaddow-Outline
 	}
 	@include respond-to(bp-large) {
-		width: 18em;
-		border-width: 5px;
-		border-radius: 10px;
-		padding: 3em 1.7em 1em;
+		width: 14em;
+		margin-left: $bg-ribbon-width+2px; // breite der weißen box-Shaddow-Outline
+	}
+}
+
+.schild {
+	background-color: #fff;
+	@include transition(transform 0.3s ease-out);
+
+	border: 2px solid $brand-color-contrast;
+	border-radius: 3px;
+	padding: 0.6em 0.9em 0.4em;
+	box-shadow: 0 0 0 1px #fff;
+	margin-bottom: -0.5em; // damit Schild über Steher ist bei hover
+	position: relative; // damit z-index funktioniert
+	z-index: 100;
+
+	@include respond-to(bp-medium) {
+		border-width: 3px;
+		border-radius: 5px;
+		padding: 1em 1.3em 0.6em;
+		margin-bottom: -1em;
+	}
+	@include respond-to(bp-large) {
+		border-width: 4px;
+		border-radius: 7px;
+		padding: 2em 1.4em 0.7em;
 		box-shadow: 0 0 0 2px #fff;
+	}
+
+	&:hover {
+		@include transform(translateY(-0.3em));
 	}
 
 	a:link, a:visited {
@@ -37,10 +60,28 @@
 	display: none;
 	text-align: center;
 	text-decoration: none;
-	padding: 1em 0 0;
+	padding: 0.5em 0 0;
+	font-size: 0.8em;
 
 	@include respond-to(bp-large) {
 		display: block;
+	}
+}
+
+.steher {
+	width: 80%;
+	height: 1em;
+	margin: 2px auto 0;
+	background: url(../img/bg/bg-steher.png) repeat-y;
+	background-size: 100% 100%;
+	position: relative; // damit z-index funktioniert
+	z-index: 10;
+
+	@include respond-to(bp-medium) {
+		height: 1.5em;
+	}
+	@include respond-to(bp-large) {
+		height: 2em;
 	}
 }
 

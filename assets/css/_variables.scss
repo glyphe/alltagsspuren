@@ -27,7 +27,12 @@ $max-width-inner-container: 1000px;  // Für einzelne Module im Shop
 $max-width-text: 45em;
 $max-width-images: 80%;
 
-$inner-distance: 5%;
+$inner-distance: 5%; // innerer Abstand des Contents zum Rand des Containers
+
+$outer-distance-medium: 1em;  // äußerer Abstand des Containers zum Seitenrand bei medium-Screens
+$outer-distance-large: 1.5em;  // äußerer Abstand des Containers zum Seitenrand bei large-Screens
+
+$bg-ribbon-width: 12px; // Breite der Hintergrundbilder am Rand der Navigation und des Footers
 
 // TYPO
 $font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
@@ -35,6 +40,6 @@ $font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans"
 // BREAKPOINTS
 $bp-small: 549px;
 $bp-medium: 550px;
-$bp-large: 900px;
-$bp-xlarge: 1200px;
+$bp-large: 830px;
+$bp-xlarge: 1100px;
 $bp-xxlarge: 1500px;
