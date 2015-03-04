@@ -18,7 +18,7 @@
 
 
 
-// ### BASIC LAYOUT ###
+// ### LAYOUT MODULE ###
 
 body {
 	background-color: rgb(130,140,48);
@@ -66,9 +66,16 @@ body {
 	}
 }
 
-.main {
+.main-content {
 	@include respond-to(bp-large) {
 		@include span-columns(9);
 	}
+	@include respond-to(bp-xlarge) {
+		@include span-columns(8);
+	}
+}
+
+.main-content img {
+	max-width: 100%;
 }
 

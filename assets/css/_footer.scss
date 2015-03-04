@@ -8,9 +8,6 @@
 	nav {
 		@include respond-to(bp-large) {
 			@include clearfix;
-			@include display(flex);
-			@include align-items(baseline);
-			@include justify-content(space-between);
 		}
 	}
 
@@ -19,18 +16,30 @@
 	}
 }
 
-.nav-footer li, .credits li {
-	@include respond-to(bp-medium) {
-		display: inline-block;
+@mixin nav-inline {  // Stellt Links in einer Zeile dar mit Trennstricht dazwischen
+	display: inline-block;
 
-		&:after {
-			content: "|";
-			color: $gray-light-2;
-		}
-		&:last-child:after {
-			content: none;
-		}
+	&:after {
+		content: "|";
+		color: $gray-light-2;
 	}
+	&:last-child:after {
+		content: none;
+	}
+}
+
+.nav-footer li {
+	@include respond-to(bp-small-only) {
+		font-size: 1.1em;
+		margin-bottom: 0.5em;
+	}
+	@include respond-to(bp-medium) {
+		@include nav-inline;
+	}
+}
+
+.credits li {
+	@include nav-inline;
 }
 
 .nav-footer a, .credits a {
@@ -39,7 +48,7 @@
 	@include transition(all 0.3s ease-out);
 
 	&:hover {
-		color: $nav-text-color-current;
+		text-decoration: underline;
 	}
 }
 
@@ -51,9 +60,17 @@
 
 .credits {
 	font-size: 0.8em;
+	@include respond-to(bp-small-only) {
+		margin-top: 1em;
+		padding-top: 1em;
+		border-top: 2px solid $gray-light-2;
+	}
+	@include respond-to(bp-medium-only) {
+		margin-top: 1em;
+	}
 	@include respond-to(bp-large) {
 		float: right;
 		text-align: right;
-		@include align-self(flex-end);
+		margin-top: 0.3em; // damit es mit der Navigation links auf einer Grundlinie steht
 	}
 }

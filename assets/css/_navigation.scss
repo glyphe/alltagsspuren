@@ -230,15 +230,38 @@
 
 // ### Subnavigation ###
 
+.nav-sub {
+	font-size: 0.9em;
+	
+	@include respond-to(bp-small-only) {
+		display: none;
+	}
+	@include respond-to(bp-medium-only) {
+		margin-bottom: 2em;
+	}
+}
+
+.nav-sub li {
+	@include respond-to(bp-medium-only) {
+		display: inline-block;
+	}
+}
+
 .nav-sub a {
 	display: block;
-	background: url(../img/bg/bg-subnavi.png) right no-repeat lighten($brand-color-contrast,20%);
-	background-size: contain;
+	text-decoration: none;
 	color: $nav-text-color-current;
 	padding: 0.7em 1em 0.6em;
-	margin-bottom: 3px;
-	text-decoration: none;
 	@include transition(all 0.3s ease-out);
+
+	@include respond-to(bp-medium-only) {
+		background: lighten($brand-color-contrast,20%);
+	}
+	@include respond-to(bp-large) {
+		background: url(../img/bg/bg-subnavi.png) right no-repeat lighten($brand-color-contrast,20%);
+		background-size: contain;
+		margin-bottom: 3px;
+	}
 
 	&:hover {
 		background-color: lighten($brand-color-contrast,10%);
@@ -251,7 +274,14 @@
 
 .nav-sub a.current {
 	color: #fff;
-	background: url(../img/bg/bg-subnavi-arrow.png) right no-repeat $brand-color-contrast;
-	background-size: contain;
+
+	@include respond-to(bp-medium-only) {
+		background: $brand-color-contrast;
+	}
+	@include respond-to(bp-large) {
+		background: url(../img/bg/bg-subnavi-arrow.png) right no-repeat $brand-color-contrast;
+		background-size: contain;
+	}
 }
+
 

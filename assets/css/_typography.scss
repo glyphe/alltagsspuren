@@ -2,6 +2,7 @@
 
 body {
 	font-family: $font-family;
+	color: $text-color-prim;
 }
 
 ::selection {
@@ -9,10 +10,90 @@ body {
   color: #fff;
 }
 
-h1 {}
+h1, h2, h3, h4 {
+	line-height: 1.1;
+}
 
-h2 {}
+h1 {
+	color: $brand-color-prim;
+	font-size: 2em;
+	font-weight: normal;
+	margin: 0 0 0.5em 0;
+}
 
-h3 {}
+h2 {
+	color: $brand-color-prim;
+	margin: 1.5em 0 0.5em;
+}
 
-p {}
+h3 {
+	color: $brand-color-prim;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 2.3em 0 0.5em;
+}
+
+h4 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 2em 0 -0.5em;
+}
+
+.main-content  p {
+	line-height: 1.5;
+
+}
+
+p.lead-in {
+	font-size: 1.1em;
+	line-height: 1.4;
+	font-style: italic;
+	font-weight: normal;
+}
+
+blockquote {
+	border-top: 3px solid $gray-light-2;
+	border-bottom: 3px solid $gray-light-2;
+	padding: 1em;
+	margin: 1em 0;
+	font-style: italic;
+	font-size: 1.2em;
+	line-height: 1.4;
+	color: $gray-mid-2;
+}
+
+figcaption {
+	font-style: italic;
+	font-size: 0.9em;
+	margin: 0.5em 0 1em;
+	color: $gray-mid-2;
+}
+
+// ### AUSZEICHNUNG ###
+
+.main-content strong {
+	color: darken($text-color-prim, 10%);
+}
+
+// ### LISTEN ###
+
+.main-content ul, .main-content ol {
+	margin-bottom: 1.5em;
+}
+
+.main-content  ul {
+	list-style: none;
+
+	li:before {
+		font-family: FontAwesome;
+		content: $fa-var-leaf;
+		margin-left: -1.5em;
+		margin-right: 0.5em;
+		color: rgb(18,113,42);
+	}
+}
+
+.main-content li {
+	margin-top: 0.4em;
+	line-height: 1.4;
+}
