@@ -239,6 +239,9 @@
 	@include respond-to(bp-medium-only) {
 		margin-bottom: 2em;
 	}
+	@include respond-to(bp-large) {
+		max-width: 12em;
+	}
 }
 
 .nav-sub li {

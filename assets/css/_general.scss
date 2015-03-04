@@ -22,6 +22,19 @@
 
 body {
 	background-color: rgb(130,140,48);
+}
+
+.wrapper {
+	max-width: $max-width;
+	margin: 0 auto;
+	position: relative;
+}
+
+.outside-wrapper { // damit Cotainer bei kleineren Auflösungen nicht am Rand kleben
+	background: url(../img/bg/bg-grass-gradient.png) top left repeat-x; //fallback, falls liniear gradient nicht funktioniert
+	@include background(linear-gradient(#aebd41, #828c30) top left repeat-x);
+	background-size: 1px 340px;
+
 
 	@include respond-to(bp-medium) {
 		padding: 0 $outer-distance-medium;
@@ -29,12 +42,6 @@ body {
 	@include respond-to(bp-large) {
 		padding: 0 $outer-distance-large;
 	}
-}
-
-.wrapper {
-	max-width: $max-width;
-	margin: 0 auto;
-	position: relative;
 }
 
 .content-wrapper { // Wrapper um den Inhaltsbereich
@@ -71,7 +78,7 @@ body {
 		@include span-columns(9);
 	}
 	@include respond-to(bp-xlarge) {
-		@include span-columns(8);
+		@include span-columns(7);
 	}
 }
 

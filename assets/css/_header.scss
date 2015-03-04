@@ -4,7 +4,7 @@
 // #### LOGO ###
 
 .logo {
-	margin: 1em 0 0 $inner-distance;
+	margin-left: $inner-distance;
 	width: 9em;
 
 	img {
@@ -94,6 +94,10 @@
 	right: $inner-distance;
 	top: 0;
 
+	@include respond-to(bp-large) {
+		right: $bg-ribbon-width;
+	}
+
 	li {
 		display: inline-block;
 
@@ -117,4 +121,14 @@
 	content: $fa-var-sign-in;
 	margin-right: 0.3em;
 }
+
+// ### BACKGROUND ###
+
+.header {
+	@extend .outside-wrapper; // damit Cotainer bei kleineren Auflösungen nicht am Rand kleben
+	@include background(url(../img/bg/bg-header-foreground.png) bottom center no-repeat, url(../img/bg/bg-header-wolke.png) top right no-repeat, linear-gradient(#a0c9e3, #d5e7f2));
+	background-size: 1622px, 287px;
+	padding-top: 1em;
+}
+
 
