@@ -26,34 +26,55 @@
 .story-facts {
 	list-style: none;
 	margin: 0;
-	padding-left: 2.7em;
+	padding: 0;
 	color: $gray-mid-2;
+	font-size: 0.9em;
 
-	@include respond-to(bp-medium) {
-		@include outer-container;
+	@include respond-to(bp-small-only) {
+		font-size: 1em;
+	}
+	@include respond-to(bp-medium-only) {
+		@include display(flex);
+		@include align-items(flex-start);
+		@include justify-content(space-between);
 	}
 
 	@include respond-to(bp-large) {
 		float: left;
-		width: 9em;
+		width: 12em;
 		margin-left: -35%;
+		margin-top: 2em;
 	}
 	@include respond-to(bp-xlarge) {
-		width: 13em;
+		width: 15em;
 		margin-left: -45%;
 	}
 
 }
 
 .story-facts > li {
-	margin-bottom: 1em;
+	@include display(flex);
+	@include align-items(flex-start);
+	margin-bottom: 0.5em;
 
+	@include respond-to(bp-medium-only) {
+		@include flex(1);
+		margin-right: 0.5em;
+	}
 	@include respond-to(bp-medium) {
-		@include span-columns(4);
+		margin-bottom: 0.5em;
 	}
 	@include respond-to(bp-large) {
-		@include span-columns(12);
 		margin-bottom: 1.5em;
+	}
+}
+
+.story-facts h5 {
+	@include respond-to(bp-small-only) {
+		display: inline;
+	}
+	a {
+		text-decoration: none;
 	}
 }
 
@@ -61,6 +82,23 @@
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+
+	@include respond-to(bp-small-only) {
+		display: inline;
+	}
+}
+
+.story-facts ul > li {
+	@include respond-to(bp-small-only) {
+		display: inline;
+		&:after {
+			content: ",";
+			margin-left: -0.25em;
+		}
+		&:last-child:after {
+			content: none;
+		}
+	}
 }
 
 .story-facts a {
@@ -69,10 +107,16 @@
 
 .story-facts-icon {
 	width: 2.2em;
-	float: left;
-	margin-left: -2.7em;
+	margin-right: 0.5em;
+
+	@include respond-to(bp-small-only) {
+		width: 1.3em;
+		margin-right: 0.3em;
+	}
 }
 
 .story-facts h5 {
 	font-size: 1em;
 }
+
+
