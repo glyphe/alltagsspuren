@@ -7,7 +7,7 @@
 .page-home h2 {
 	margin-top: 0;
 	font-weight: normal;
-	font-size: 1.6em;
+	font-size: 1.8em;
 	text-align: center;
 }
 
@@ -15,21 +15,21 @@
 // ### Intro-Modul mit Begrüßungstext ###
 
 .sec-home-intro {
-	padding: 3em $inner-distance;
+	padding: 0 $inner-distance 2em;
 	text-align: center;
 
 	@include respond-to(bp-large) {
+		padding: 3em $inner-distance;
 		@include outer-container;
 	}
 }
 
 .sec-home-intro > div {
-	padding: 1em;
+	padding: 2em 1em;
 
 	@include respond-to(bp-large) {
 		@include span-columns(6);
  		@include omega; // Entfernt Abstand zw. Spalten
-		padding: 0 1em;
 	}
 	@include respond-to(bp-xlarge) {
 		padding: 1em 2.5em;
@@ -50,6 +50,10 @@
 	}
 }
 
+.sec-home-intro h2 {
+	font-size: 1.6em;
+}
+
 
 // ### Aktuelle Gemeinden ###
 
@@ -59,6 +63,7 @@
 }
 
 
+
 // ### Aktuelle Geschichten ###
 
 .sec-home-geschichten {
@@ -66,16 +71,24 @@
 }
 
 
+
 // ### Widget-Liste ###
 
 .widget-list {
 	list-style: none;
-	margin: 2em 0;
+	margin: 2em 0 0;
 	padding: 0;
 
 	@include respond-to(bp-medium) {
 		@include outer-container;
 	}
+}
+
+.widget-list h3 {
+	margin: 0.2em 0;
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: normal;
 }
 
 .widget-list li {
@@ -86,11 +99,11 @@
 
 	@include respond-to(bp-medium) {
 		@include span-columns(6);
-		@include omega(2n);
+		@include omega(2n); // Umbruch nach jedem 2. Element
 	}
 
-	@include respond-to(bp-xlarge) {
-		@include omega-reset(2n);
+	@include respond-to(bp-large) {
+		@include omega-reset(2n); // Rest, damit es nun nicht nach der zweiten Spalte umbricht
 		@include span-columns(4);
 		@include omega(3n);
 	}
@@ -98,5 +111,72 @@
 	img {
 		width: 100%;
 	}
+}
+
+.img-gemeinde {
+	display: block;
+	margin-bottom: 0.7em;
+}
+
+.widget-list a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.widget-list a:hover h3 {
+	color: $brand-color-contrast;
+}
+
+.widget-subinfo { // Text unterhalb der Überschrift
+	color: $gray-mid-2;
+	font-size: 0.9em;
+}
+
+.widget-content {  // Bild/Text im Widget
+	margin: 0.7em -0.7em; // -0.7em um padding von Container auszugleichen und bis zum Rand zu gehen
+	padding: 0.7em;
+	border-top: 2px solid $gray-light-1;
+	border-bottom: 2px solid $gray-light-1;
+}
+
+.widget-content p {
+	margin: 0;
+	padding: 1em 0.5em;
+	line-height: 1.3;
+}
+
+.widget-rating {
+	text-align: left;
+	color: $gray-mid-1;
+
+	span:after {
+		content: "|";
+		margin-left: 0.2em;
+		color: $gray-light-1;
+	}
+	span:last-child:after {
+		content: none;
+	}
+}
+
+.entry-icon {
+	font-family: FontAwesome;
+	margin-right: 0.2em;
+	color: lighten($gray-mid-1,10%);
+}
+
+.entry-rating-up:before {
+	@extend .entry-icon;
+	content: $fa-var-thumbs-up;
+}
+
+.entry-rating-down:before {
+	@extend .entry-icon;
+	content: $fa-var-thumbs-down;
+}
+
+.entry-comment:before {
+	@extend .entry-icon;
+	content: $fa-var-comment;
 }
 

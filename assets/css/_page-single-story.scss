@@ -1,0 +1,78 @@
+// ### EINZELNE MOBILITÄTSGESCHICHTE-PAGE ###
+
+.page-single-story {
+	padding: 2em $inner-distance 4em;
+
+	@include respond-to(bp-large) {
+		@include outer-container;
+	}
+}
+
+
+.page-single-story .main-content {
+	@include respond-to(bp-large) {
+		@include span-columns(9);
+		@include shift(3);
+	}
+	@include respond-to(bp-xlarge) {
+		@include span-columns(7);
+	}
+}
+
+
+
+// ### Fakten zur Geschichte ###
+
+.story-facts {
+	list-style: none;
+	margin: 0;
+	padding-left: 2.7em;
+	color: $gray-mid-2;
+
+	@include respond-to(bp-medium) {
+		@include outer-container;
+	}
+
+	@include respond-to(bp-large) {
+		float: left;
+		width: 9em;
+		margin-left: -35%;
+	}
+	@include respond-to(bp-xlarge) {
+		width: 13em;
+		margin-left: -45%;
+	}
+
+}
+
+.story-facts > li {
+	margin-bottom: 1em;
+
+	@include respond-to(bp-medium) {
+		@include span-columns(4);
+	}
+	@include respond-to(bp-large) {
+		@include span-columns(12);
+		margin-bottom: 1.5em;
+	}
+}
+
+.story-facts ul {  // Unterliste mit den einzelnen Mobilitätsformen/Verkehrsmitteln
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.story-facts a {
+	color: inherit;
+}
+
+.story-facts-icon {
+	width: 2.2em;
+	float: left;
+	margin-left: -2.7em;
+}
+
+.story-facts h5 {
+	font-size: 1em;
+}
