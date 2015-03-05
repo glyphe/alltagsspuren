@@ -5,14 +5,13 @@
 	color: $text-color-footer;
 	padding: 1em $inner-distance;
 
-	nav {
-		@include respond-to(bp-large) {
-			@include clearfix;
-		}
-	}
-
 	@include respond-to(bp-medium) {
+		box-shadow: 0 4px 10px -4px rgba(0,0,0,0.3);
 		margin-bottom: 2em;
+	}
+	@include respond-to(bp-large) {
+		padding: 1em 2em;
+		margin-bottom: 4em;
 	}
 }
 
@@ -25,6 +24,12 @@
 	}
 	&:last-child:after {
 		content: none;
+	}
+}
+
+.footer nav {
+	@include respond-to(bp-large) {
+		@include clearfix;
 	}
 }
 

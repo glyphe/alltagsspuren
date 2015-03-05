@@ -39,9 +39,6 @@
 	@include respond-to(bp-medium-only) {
 		text-align: center;
 		font-size: 0.8em;
-		// width: 20%;
-		// max-width: 30%;
-		// @include flex-grow(1);
 	}
 	@include respond-to(bp-large) {
 		&:first-child {
@@ -56,8 +53,6 @@
 	color:#FFF;
 	padding: 1em;
 
-	@include transition(all 0.3s ease-out);
-
 	@include respond-to(bp-small-only) {
 		border-bottom: 2px solid $nav-border-color;
 		padding-left: $inner-distance // damit alles an der linken seite ausgerichtet ist
@@ -68,6 +63,9 @@
 	@include respond-to(bp-medium-only) {
 		border-bottom: 2px solid $nav-border-color;
 	}
+	@include respond-to(bp-large) {
+	}
+
 	&:hover {
 		background: lighten($brand-color-contrast,10%);
 	}

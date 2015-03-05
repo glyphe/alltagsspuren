@@ -1,0 +1,24 @@
+// ### CONTENT-PAGE ###
+
+.page-content {
+	padding: 2em $inner-distance 4em;
+
+	@include respond-to(bp-large) {
+		@include outer-container;
+	}
+}
+
+.sidebar {
+	@include respond-to(bp-large) {
+		@include span-columns(3);
+	}
+}
+
+.page-content .main-content {
+	@include respond-to(bp-large) {
+		@include span-columns(9);
+	}
+	@include respond-to(bp-xlarge) {
+		@include span-columns(7);
+	}
+}

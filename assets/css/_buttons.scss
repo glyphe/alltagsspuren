@@ -1,14 +1,26 @@
 .btn {
   display: inline-block;
   margin: 0.2em 0.5em 0.2em 0;
+  border-radius: 5px;
 
   &:link, &:visited {
-    padding: 0.4em 0.8em 0.3em;
+    padding: 0.5em 1em 0.5em;
+    background-color: $brand-color-prim;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid $gray-light-2;
   }
 
-  &:hover {}
+  &:hover {
+    background-color: $brand-color-sec;
+    border-bottom-color: $gray-mid-1;
+  }
   
-  &:active, &:focus {}
+  &:active, &:focus {
+    @include transform(translateY(2px));
+    border-bottom-color: transparent;
+  }
 }
 
 .btn-action {

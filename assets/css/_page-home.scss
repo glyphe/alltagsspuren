@@ -1,0 +1,102 @@
+// ### STARTSEITE, HOME-PAGE ###
+
+.page-home section:nth-child(even) {  // abwechselnde Hintergrundfarben
+	background-color: #fff;
+}
+
+.page-home h2 {
+	margin-top: 0;
+	font-weight: normal;
+	font-size: 1.6em;
+	text-align: center;
+}
+
+
+// ### Intro-Modul mit Begrüßungstext ###
+
+.sec-home-intro {
+	padding: 3em $inner-distance;
+	text-align: center;
+
+	@include respond-to(bp-large) {
+		@include outer-container;
+	}
+}
+
+.sec-home-intro > div {
+	padding: 1em;
+
+	@include respond-to(bp-large) {
+		@include span-columns(6);
+ 		@include omega; // Entfernt Abstand zw. Spalten
+		padding: 0 1em;
+	}
+	@include respond-to(bp-xlarge) {
+		padding: 1em 2.5em;
+	}
+
+	&:first-child {
+		border-bottom: 4px solid rgb(245,245,245);
+
+		@include respond-to(bp-large) {
+			border-right: 2px solid rgb(245,245,245);
+			border-bottom: none;
+		}
+	}
+	&:last-child {
+		@include respond-to(bp-large) {
+			border-left: 2px solid rgb(245,245,245);
+		}
+	}
+}
+
+
+// ### Aktuelle Gemeinden ###
+
+.sec-home-gemeinden {
+	padding: 3em $inner-distance;
+	text-align: center;
+}
+
+
+// ### Aktuelle Geschichten ###
+
+.sec-home-geschichten {
+	@extend .sec-home-gemeinden
+}
+
+
+// ### Widget-Liste ###
+
+.widget-list {
+	list-style: none;
+	margin: 2em 0;
+	padding: 0;
+
+	@include respond-to(bp-medium) {
+		@include outer-container;
+	}
+}
+
+.widget-list li {
+	margin-bottom: 2em;
+	padding: 0.7em;
+	background-color: rgb(242,242,242);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+
+	@include respond-to(bp-medium) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+
+	@include respond-to(bp-xlarge) {
+		@include omega-reset(2n);
+		@include span-columns(4);
+		@include omega(3n);
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
