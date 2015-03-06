@@ -5,6 +5,15 @@
 	.content-wrapper
 		.content.page-single-story
 
+			%nav.nav-bread-crumb
+				%ul
+					%li
+						%a(href="<!-- @path stories-timeline -->") Alle Mobilitätsgeschichten
+					%li
+						%a(href="#") Spital am Semmering
+					%li
+						%a(href="#") 2015
+
 			%main.main-content
 
 				%article.single-story
@@ -21,25 +30,24 @@
 								%img.story-facts-icon(src="<!-- @path icon_ort -->")
 								%div
 									%h5 
-										%a(href="#") Spital am Semmering
+										%a(href="<!-- @path stories-timeline -->") Spital am Semmering
 									2015
-							%li
-								%img.story-facts-icon(src="<!-- @path icon_verkehrsmittel -->")
-								%div
-									%h5 Verkehrsmittel
-									%ul
-										%li
-											%a(href="#") Zu Fuß
-										%li
-											%a(href="#") Fahrrad
 							%li
 								%img.story-facts-icon(src="<!-- @path icon_wegetyp -->")
 								%div
 									%h5 Wegetyp
 									%ul
 										%li
-											%a(href="#") Freizeit
-
+											%a(href="<!-- @path stories-timeline -->") Freizeit
+							%li
+								%img.story-facts-icon(src="<!-- @path icon_verkehrsmittel -->")
+								%div
+									%h5 Verkehrsmittel
+									%ul
+										%li
+											%a(href="<!-- @path stories-timeline -->") Zu Fuß
+										%li
+											%a(href="<!-- @path stories-timeline -->") Fahrrad
 					.story-content
 						%figure
 							%img(src="<!-- @path schafskoepfle -->")

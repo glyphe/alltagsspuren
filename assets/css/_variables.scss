@@ -4,6 +4,7 @@ $brand-color-prim: rgb(24,150,56);
 $brand-color-sec: rgb(169,189,71);
 $brand-color-tir: rgb(77,212,172);
 $brand-color-contrast: rgb(62,167,179);
+$brand-color-contrast-light: rgb(158,210,216);
 $alert-color: rgb(216,120,116);
 $text-color-prim: rgb(102,102,102);
 $text-color-sec: #000;
@@ -16,6 +17,8 @@ $gray-light-1: rgb(225,225,225);
 $gray-light-2: rgb(204,204,204);
 $gray-mid-1: rgb(153,153,153);
 $gray-mid-2: rgb(128,128,128);
+
+$white-almost: rgb(247,247,247);
 
 $nav-border-color: rgb(54,143,153);
 $nav-text-color-current: rgb(47,125,134);
@@ -41,5 +44,5 @@ $font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans"
 $bp-small: 549px;
 $bp-medium: 550px;
 $bp-large: 830px;
-$bp-xlarge: 1100px;
+$bp-xlarge: 1050px;
 $bp-xxlarge: 1500px;

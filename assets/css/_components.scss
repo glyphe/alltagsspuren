@@ -1,0 +1,33 @@
+// Wiederkehrende Komponenten
+
+
+// ### Story-Rating ###
+
+.story-rating { // kleine Info-Icons zur Beurteilung der einzelnen Geschichte
+	text-align: left;
+	color: $gray-mid-1;
+
+	span:after {
+		content: "|";
+		margin-left: 0.2em;
+		color: $gray-light-1;
+	}
+	span:last-child:after {
+		content: none;
+	}
+}
+
+.entry-rating-up:before {
+	@include add-icon;
+	content: $fa-var-thumbs-o-up;
+}
+
+.entry-rating-down:before {
+	@include add-icon;
+	content: $fa-var-thumbs-o-down;
+}
+
+.entry-comment:before {
+	@include add-icon;
+	content: $fa-var-comment;
+}

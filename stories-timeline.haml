@@ -1,0 +1,194 @@
+<!-- $title Mobilitätsgeschichten | Alltagsspuren -->
+<!-- @include header -->
+
+.outside-wrapper
+	.content-wrapper
+		.content.page-stories-timeline
+			
+			%ul.timeline-filters
+				%li
+					%div
+						%img(src="<!-- @path icon_ort -->")
+					%div
+						%select 
+							%option Alle Gemeinden
+							%option Gainfarn
+							%option Oberrohrbach
+							%option Spital am Semmering
+							%option St. Veit im Defereggental
+				%li
+					%div
+						%img(src="<!-- @path icon_wegetyp -->")
+					%div
+						%select 
+							%option Alle Wegetypen
+							%option Schulweg
+							%option Arbeitsweg
+							%option Versorgungsweg
+							%option Freizeitweg
+							%option Sonstiges
+				%li
+					%div
+						%img(src="<!-- @path icon_verkehrsmittel -->")
+					%div
+						%select 
+							%option Alle Verkehrsmittel					
+							%option Zu Fuß
+							%option Fahrrad
+							%option Bus
+							%option Auto
+							%option Zug
+							%option Sonstiges
+				%li
+					%div
+						%img(src="<!-- @path icon_zeitraum -->")
+					%div
+						%select 
+							%option Alle Jahrzehnte					
+							%option 2010 bis heute
+							%option 2000 bis 2009
+							%option 1990 bis 1999
+							%option 1980 bis 1989
+							%option 1970 bis 1979
+							%option 1960 bis 1969
+							%option 1950 bis 1959
+							%option 1940 bis 1949
+							%option 1930 bis 1939
+
+			%main.main-content
+				%header.timeline-header
+					.timeline-title
+						%img(src="<!-- @path st-veit-defereggental -->")
+						%h1 St. Veit im Defereggental
+						%span 25 Mobilitätsgeschichten
+					.list-map-switch
+						%nav
+							%ul
+								%li
+									%i.fa.fa-bars 
+									Listenansicht
+								%li.current
+									%i.fa.fa-map-marker
+									%a(href="#") Kartenansicht
+
+
+				.timeline-content
+					.timeline-box
+						%h2 2010 bis heute
+						%ul
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Geheimer Aufstieg
+									.story-meta-info
+										St. Veit im Defereggental
+										.story-rating
+											%span.entry-rating-up 1
+											%span.entry-comment 1
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Sicher & Aktiv zur Schule! - zu Fuß, mit dem Fahrrad und mit dem Scooter
+									.story-meta-info
+										Leopoldsdorf
+										.story-rating
+											%span.entry-rating-up 8
+											%span.entry-rating-down 3
+											%span.entry-comment 2
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Die Weinviertler Hohlwege geraten in Vergessenheit
+									.story-meta-info
+										Oberrohrbach
+										.story-rating
+											%span.entry-rating-up 12
+											%span.entry-comment 1
+							%li
+								%a.load-more-link(href="#") Alle 28 Geschichten zeigen
+
+					.timeline-box
+						%h2 2000er
+						%ul
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Das Hirn auf Rädern
+									.story-meta-info
+										Spital am Semmering
+										.story-rating
+											%span.entry-rating-up 7
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Mein Fahrrad als täglicher Begleiter
+									.story-meta-info
+										Oberrohrbach
+										.story-rating
+											%span.entry-rating-up 6
+											%span.entry-comment 1
+
+					.timeline-box
+						%h2 1990er
+						%ul
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Geheimer Aufstieg
+									.story-meta-info
+										St. Veit im Defereggental
+										.story-rating
+											%span.entry-rating-up 1
+											%span.entry-comment 1
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Sicher & Aktiv zur Schule! - zu Fuß, mit dem Fahrrad und mit dem Scooter
+									.story-meta-info
+										Leopoldsdorf
+										.story-rating
+											%span.entry-rating-up 8
+											%span.entry-rating-down 3
+											%span.entry-comment 2
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Die Weinviertler Hohlwege geraten in Vergessenheit
+									.story-meta-info
+										Oberrohrbach
+										.story-rating
+											%span.entry-rating-up 12
+											%span.entry-comment 1
+							%li
+								%a.load-more-link(href="#") Alle 4 Geschichten zeigen
+
+					.missing-stories
+						1950—1989 gibt es noch keine Geschichten –
+						%a(href="#") Schreib eine!
+
+					.timeline-box
+						%h2 1940er
+						%ul
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Zum Studium nach Wien in den 1940ern
+									.story-meta-info
+										Spital am Semmering
+					.timeline-box
+						%h2 1930er
+						%ul
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Das Hirn auf Rädern
+									.story-meta-info
+										Spital am Semmering
+										.story-rating
+											%span.entry-rating-up 7
+							%li
+								%a(href="<!-- @path single-story -->")
+									.story-title Mein Fahrrad als täglicher Begleiter
+									.story-meta-info
+										Oberrohrbach
+										.story-rating
+											%span.entry-rating-up 6
+											%span.entry-comment 1
+
+
+				%footer.timeline-footer
+					%a.btn(href="#")
+						Schreib deine Geschichte
+						%i.fa.fa-pencil
+
+	<!-- @include footer -->

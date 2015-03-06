@@ -8,7 +8,7 @@ input:not([type=submit]):not([type=file]) {
   border: 2px solid $gray-light-2;
   box-shadow: inset 0 0 5px rgba($gray-light-2,0.7);
   padding: 0.5em 0.7em;
-  background-color: rgb(247,247,247);
+  background-color: $white-almost;
   color: $text-color-prim;
   font-family: $font-family;
   @include transition(all 0.3s ease-out);
@@ -62,6 +62,11 @@ textarea {
 
 select {
   @extend input;
+  background-image: url(../img/icon_dropdown-arrows.svg);
+  background-size: 9px;
+  background-position: right 7px center;
+  background-repeat: no-repeat;
+
 }
 
 label span { // Beschriftung der Inputs

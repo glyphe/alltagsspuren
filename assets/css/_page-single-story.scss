@@ -18,6 +18,50 @@
 	}
 }
 
+// ### BREADCRUMB //
+
+.nav-bread-crumb {
+	margin: -1em 0 1.5em;
+	border-bottom: 3px solid $gray-light-2;
+	padding: 0.5em 0 1em;
+
+	@include respond-to(bp-medium) {
+		font-size: 1.2em;
+		margin: -1em 0 2.5em;
+		padding: 1em 0 1.4em;
+	}
+}
+
+.nav-bread-crumb li {
+	display: inline;
+
+	@include respond-to(bp-small-only) {
+		display: none;  // Handheld: alle Links bis auf den ersten ausbleden 
+		&:first-child {
+			display: block;
+		}
+		&:first-child:before {
+			@include add-icon;
+			margin-right: 0em;
+			content: $fa-var-arrow-circle-left;
+		}
+	}
+	&:after {
+		@include respond-to(bp-medium){
+			@include add-icon;
+			content: $fa-var-angle-double-right;
+			margin-right: 0;
+		}
+	}
+	&:last-child:after {
+		content: none;
+	}
+}
+
+.nav-bread-crumb a {
+	text-decoration: none;
+}
+
 
 // ### Story Header ###
 
@@ -46,7 +90,7 @@
 		color: $brand-color-prim;
 	}
 	&:before {
-		@extend .entry-icon;
+		@include add-icon;
 		content: $fa-var-comment;
 		margin-right: 0;
 	}
@@ -220,7 +264,7 @@ a.vote-button {
 	@extend .vote-button;
 	background-color: $brand-color-sec;
 	&:before {
-		@extend .entry-icon;
+		@include add-icon;
 		content: $fa-var-thumbs-o-up;
 	}
 	&:hover {
@@ -235,7 +279,7 @@ a.vote-button {
 	@extend .vote-button;
 	background-color: $alert-color;
 	&:before {
-		@extend .entry-icon;
+		@include add-icon;
 		content: $fa-var-thumbs-o-down;
 	}
 	&:hover {
@@ -323,7 +367,7 @@ a.new-comment-link {
 	text-decoration: none;
 
 	&:after {
-		@extend .entry-icon;
+		@include add-icon;
 		content: $fa-var-arrow-circle-down;
 		margin: 0 0 0 0.3em;
 		color: inherit;

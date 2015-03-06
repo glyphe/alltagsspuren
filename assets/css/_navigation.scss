@@ -77,7 +77,7 @@
 
 .nav-item a.current { // Aktuelle gewählter Menüpunkt
 	color: $nav-text-color-current;
-	background: lighten($brand-color-contrast,20%);
+	background: $brand-color-contrast-light;
 }
 
 .nav-item:hover .nav-submenu {
@@ -256,7 +256,7 @@
 	@include transition(all 0.3s ease-out);
 
 	@include respond-to(bp-medium-only) {
-		background: lighten($brand-color-contrast,20%);
+		background: $brand-color-contrast-light;
 	}
 	@include respond-to(bp-large) {
 		background: url(../img/bg/bg-subnavi.png) right no-repeat lighten($brand-color-contrast,20%);

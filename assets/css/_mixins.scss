@@ -5,3 +5,9 @@
   }
   
 }
+
+@mixin add-icon {
+	font-family: FontAwesome;
+	margin-right: 0.2em;
+	color: lighten($gray-mid-1,10%);
+}
