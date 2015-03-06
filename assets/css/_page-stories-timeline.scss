@@ -130,13 +130,16 @@
 .timeline-content {
 	max-width: 30em;
 	margin: 0 auto;
+	@include respond-to(bp-large) {
+		margin-top: 4em;
+	}
 	background: url(../img/bg/bg-timeline-stripe.png) top center repeat-y;
 	background-size: 8px;
 }
 
 .timeline-box {
 	box-shadow: 0 1px 6px rgba($gray-mid-2,0.3);
-	margin: 4em 0;
+	margin: 0 0 4em;
 }
 
 .timeline-box h2 {
@@ -213,7 +216,7 @@ a.load-more-link {
 }
 
 .missing-stories {
-	margin: 1em auto;
+	margin: 4em auto;
 	padding: 1em 0.5em;
 	border-radius: 5px;
 	text-align: center;
