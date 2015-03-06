@@ -1,19 +1,59 @@
 label {}
 
-input {
+input:not([type=submit]):not([type=file]) {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   width: 100%;
+  border-radius: 5px;
+  border: 2px solid $gray-light-2;
+  box-shadow: inset 0 0 5px rgba($gray-light-2,0.7);
+  padding: 0.5em 0.7em;
+  background-color: rgb(247,247,247);
+  color: $text-color-prim;
+  font-family: $font-family;
+  @include transition(all 0.3s ease-out);
+
+  @include placeholder {
+    color: rgb(179,179,179);
+  }
 
   &:focus {
     outline: none;
+    border-color: $gray-mid-2;
+    background-color: #fff;
+  }  
+}
+
+input[type^="submit"] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  margin: 0.2em 0.5em 0.2em 0;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.5em;
+  background-color: $brand-color-prim;
+  color: #fff;
+  font-family: $font-family;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-bottom: 2px solid $gray-light-2;
+  @include transition(all 0.3s ease-out);
+
+  @include respond-to(bp-small-only) {
+    width: 100%;
+    padding: 0.8em;
   }
 
-  &[type^="submit"] {
-    &:hover {}
-    &:active {}
+  &:hover {
+    background-color: $brand-color-sec;
+    border-bottom-color: $gray-mid-1;
   }
   
+  &:active, &:focus {
+    outline: none;
+    @include transform(translateY(2px));
+    border-bottom-color: transparent;
+  }
 }
 
 textarea {
@@ -22,4 +62,10 @@ textarea {
 
 select {
   @extend input;
+}
+
+label span { // Beschriftung der Inputs
+  display: block;
+  margin: 1.5em 0 0.3em;
+  font-weight: bold;
 }

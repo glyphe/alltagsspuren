@@ -7,45 +7,106 @@
 
 			%main.main-content
 
-				%header.story-header
-					%h1 Geheimer Aufstieg
-					%span.story-author von <strong>Theodor Raubgut</strong>
-					%span.story-comments
-						%a(href="#story-comments") 1 Kommentar
+				%article.single-story
+					%header.story-header
+						%h1 Geheimer Aufstieg
+						.story-meta
+							von 
+							%span.story-author Theodor Raubgut
+							%span.story-count-comments
+								%a(href="#story-comments") 2 Kommentare
 
-					%ul.story-facts
+						%ul.story-facts
+							%li
+								%img.story-facts-icon(src="<!-- @path icon_ort -->")
+								%div
+									%h5 
+										%a(href="#") Spital am Semmering
+									2015
+							%li
+								%img.story-facts-icon(src="<!-- @path icon_verkehrsmittel -->")
+								%div
+									%h5 Verkehrsmittel
+									%ul
+										%li
+											%a(href="#") Zu Fuß
+										%li
+											%a(href="#") Fahrrad
+							%li
+								%img.story-facts-icon(src="<!-- @path icon_wegetyp -->")
+								%div
+									%h5 Wegetyp
+									%ul
+										%li
+											%a(href="#") Freizeit
+
+					.story-content
+						%figure
+							%img(src="<!-- @path schafskoepfle -->")
+							%figcaption Bildnachweis: Theodor Raubgut
+
+						%p Ich kenne einen Aufstieg auf den Schafsköpfle, wie er nur wenigen bekannt sein dürfte!? Auf dieser Seite des Berges hat man eine weitaus bessere Aussicht als auf der anderen, zu der ein beschilderter Wanderweg führt. Ich finde, genau so schön wie auf dem höheren und schwerer zu besteigendem Predigtstuhl.
+
+						%p Der Weg auf den Schafsköpfle, den ich meine, ist die Weiterführung der vermeintlichen Sackgasse hinter dem Segensbrunnen, in der Nähe vom Gasthaus Platzhirsch.  Geht man die wild verwucherte Furche hinter dem Brunnen, weiter den Berg rauf, so kommt man nach etwa 10 Minuten zu einer Lichtung – von dort aus sieht man schon die Spitze des Schafsköpfle. Der Weg zum Ziel ergibt sich dann schon ganz vom selbst. Eine Stunde sollte man schon Zeit haben. Der Ausblick ist traumhaft.
+
+						%p Früher dürfte der Wege bekannter gewesen sein, was ich aus Erzählungen älterer Kollegen schließe. Schade, dass dem nicht mehr so ist. Vielleicht motiviert meine Geschichte den ein oder anderen, den Schafsköpfle mal auf diesem Weg zu besteigen.
+
+					.story-vote
+						%div
+							Hier ist eine Aufforderung zur Interaktion
+						%div
+							%a.vote-up(href="#") 12
+							%a.vote-down(href="#") 0
+
+					.story-share
+						%a.share-facebook(href="#")
+							%i.fa.fa-facebook-square
+						%a.share-twitter(href="#")
+							%i.fa.fa-twitter-square
+						%a.share-google-plus(href="#")
+							%i.fa.fa-google-plus-square
+						%a.inappropriate-link(href="#") Beitrag melden
+
+				#story-comments.story-comments
+					%header
+						%h2 2 Kommentare
+						%a.new-comment-link(href="#new-comment") Schreib einen Kommentar
+
+					%ol.story-comments-list
 						%li
-							%img.story-facts-icon(src="<!-- @path icon_ort -->")
-							%div
-								%h5 
-									%a(href="#") Spital am Semmering
-								2015
+							%span.comment-author Stefanie Müller
+							%span.comment-date 13.04.2015
+							.comment-content
+								%p Dieser Blindtext wird gerade durch 130 Millionen Rezeptoren Ihrer Netzhaut erfasst. Die Zellen werden dadurch in einen Gemeinde motiviert teilzunehmen und in Erregungszustand versetzt, der sich über den Sehnerv in dem hinteren Teil Ihres Gehirns ausbreitet.
 						%li
-							%img.story-facts-icon(src="<!-- @path icon_verkehrsmittel -->")
-							%div
-								%h5 Verkehrsmittel
-								%ul
-									%li
-										%a(href="#") Zu Fuß
-									%li
-										%a(href="#") Fahrrad
-						%li
-							%img.story-facts-icon(src="<!-- @path icon_wegetyp -->")
-							%div
-								%h5 Wegetyp
-								%ul
-									%li
-										%a(href="#") Freizeit
+							%span.comment-author Hans Jörg Musterbürger
+							%span.comment-date 15.04.2015
+							.comment-content
+								%p Und auch dieser Blindtext wird gerade durch 130 Millionen Rezeptoren Ihrer Netzhaut erfasst. Die Zellen werden dadurch in einen.
+								%p Gemeinde motiviert teilzunehmen und in Erregungszustand versetzt, der sich über den Sehnerv in dem hinteren Teil Ihres Gehirns ausbreitet.
 
-				.story-content
-					%figure
-						%img(src="<!-- @path schafskoepfle -->")
-						%figcaption Bildnachweis: Theodor Raubgut
+				#new-comment.new-comment
+					%form.form-new-comment
+						%h2 Schreib einen Kommentar
 
-					%p Ich kenne einen Aufstieg auf den Schafsköpfle, wie er nur wenigen bekannt sein dürfte!? Auf dieser Seite des Berges hat man eine weitaus bessere Aussicht als auf der anderen, zu der ein beschilderter Wanderweg führt. Ich finde, genau so schön wie auf dem höheren und schwerer zu besteigendem Predigtstuhl.
+						%textarea(rows="5")
+						%div
+							%label
+								%span Name*
+								%input(type="text" placeholder="" required)
+							%label
+								%span
+									E-Mail-Adresse*
+									%span.label-comment (wird nicht veröffentlicht)
+								%input(type="email" placeholder="" required)
+							%label
+								%span Tippe die Zeichen in diesem Bild ab*
+								.captcha-container
+									%img(src="<!-- @path captcha -->")
+									%input(type="text" placeholder="" required)
 
-					%p Der Weg auf den Schafsköpfle, den ich meine, ist die Weiterführung der vermeintlichen Sackgasse hinter dem Segensbrunnen, in der Nähe vom Gasthaus Platzhirsch.  Geht man die wild verwucherte Furche hinter dem Brunnen, weiter den Berg rauf, so kommt man nach etwa 10 Minuten zu einer Lichtung – von dort aus sieht man schon die Spitze des Schafsköpfle. Der Weg zum Ziel ergibt sich dann schon ganz vom selbst. Eine Stunde sollte man schon Zeit haben. Der Ausblick ist traumhaft.
+						%input(type="submit" value="Kommentar veröffentlichen")
 
-					%p Früher dürfte der Wege bekannter gewesen sein, was ich aus Erzählungen älterer Kollegen schließe. Schade, dass dem nicht mehr so ist. Vielleicht motiviert meine Geschichte den ein oder anderen, den Schafsköpfle mal auf diesem Weg zu besteigen.
+
 
 	<!-- @include footer -->

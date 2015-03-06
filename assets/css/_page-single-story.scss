@@ -8,7 +8,6 @@
 	}
 }
 
-
 .page-single-story .main-content {
 	@include respond-to(bp-large) {
 		@include span-columns(9);
@@ -19,6 +18,39 @@
 	}
 }
 
+
+// ### Story Header ###
+
+.story-header h1 {
+	margin-bottom: 0.2em;
+}
+
+.story-meta {
+	color: $gray-mid-2;
+	font-size: 0.9em;
+	margin-bottom: 2em;
+}
+
+.story-author {
+	font-weight: bold;
+}
+
+.story-count-comments {
+	margin-left: 0.4em;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	a:hover {
+		color: $brand-color-prim;
+	}
+	&:before {
+		@extend .entry-icon;
+		content: $fa-var-comment;
+		margin-right: 0;
+	}
+}
 
 
 // ### Fakten zur Geschichte ###
@@ -32,6 +64,7 @@
 
 	@include respond-to(bp-small-only) {
 		font-size: 1em;
+		margin-bottom: 2em;
 	}
 	@include respond-to(bp-medium-only) {
 		@include display(flex);
@@ -93,7 +126,7 @@
 		display: inline;
 		&:after {
 			content: ",";
-			margin-left: -0.25em;
+			margin-left: -0.3em;
 		}
 		&:last-child:after {
 			content: none;
@@ -103,14 +136,20 @@
 
 .story-facts a {
 	color: inherit;
+
+	&:hover {
+		color: $brand-color-prim;
+	}
 }
 
 .story-facts-icon {
 	width: 2.2em;
+	min-width: 2.2em; // damit es durch flexbox nicht weiter schrumpft
 	margin-right: 0.5em;
 
 	@include respond-to(bp-small-only) {
 		width: 1.3em;
+		min-width: 1.3em; // damit es durch flexbox nicht weiter schrumpft
 		margin-right: 0.3em;
 	}
 }
@@ -120,3 +159,253 @@
 }
 
 
+
+// ### STORY VOTE ###
+
+.story-vote {
+	margin: 2em 0 0.5em;
+	border-top: 3px solid $gray-light-2;
+	border-bottom: 3px solid $gray-light-2;
+	padding: 0.7em 0 1.3em;
+
+	@include respond-to(bp-medium) {
+		@include outer-container;
+		padding-top: 1.3em;
+	}
+
+	> div:first-child { // container für Aufforderungstext
+		font-weight: bold;
+		color: $gray-mid-2;
+		@include respond-to(bp-medium) {
+			@include span-columns(7);
+		}
+	}
+
+	> div:last-child { // container für Buttons
+		@include respond-to(bp-small-only) {
+			margin-top: 1em;
+		}
+		@include respond-to(bp-medium) {
+			@include span-columns(5);
+			text-align: right;
+		}
+	}
+}
+
+
+a.vote-button {
+	@include respond-to(bp-small-only) {
+		margin-right: 1em;
+	}
+	@include respond-to(bp-medium) {
+		margin-left: 1em;
+	}
+
+	padding: 0.5em 0.7em 0.4em;
+	text-decoration: none;
+	border-radius: 5px;
+	color: #fff;
+
+
+	&:before {
+		color: inherit;
+		border-right: 1px solid rgba(255,255,255,0.3);
+		padding-right: 0.5em;
+		margin: -0.3em 0.5em -0.3 0;
+		font-size: 1.2em;
+	}
+}
+
+.vote-up {
+	@extend .vote-button;
+	background-color: $brand-color-sec;
+	&:before {
+		@extend .entry-icon;
+		content: $fa-var-thumbs-o-up;
+	}
+	&:hover {
+		background-color: darken($brand-color-sec, 5%);
+	}
+	&:active {
+		background-color: darken($brand-color-sec, 10%);
+	}
+}
+
+.vote-down {
+	@extend .vote-button;
+	background-color: $alert-color;
+	&:before {
+		@extend .entry-icon;
+		content: $fa-var-thumbs-o-down;
+	}
+	&:hover {
+		background-color: darken($alert-color, 5%);
+	}
+	&:active {
+		background-color: darken($alert-color, 10%);
+	}
+}
+
+
+// ### STORY SHARE ###
+
+a.share-facebook, a.share-twitter, a.share-google-plus {
+	font-size: 2.5em;
+	@include respond-to(bp-medium) {
+		font-size: 2.2em;
+	}
+	text-decoration: none;
+	color: $gray-mid-1;
+
+}
+
+a.share-facebook:hover {
+	color: #3b5998;
+}
+a.share-twitter:hover {
+	color: #4099FF;
+}
+a.share-google-plus:hover {
+	color: #dd4b39;
+}
+
+a.inappropriate-link {
+	margin-top: 1em;
+	@include respond-to(bp-medium) {
+		margin-top: 0.8em;
+	}
+	font-size: 0.8em;
+	color: $gray-mid-2;
+	float: right;
+
+
+	&:hover {
+		color: $brand-color-prim;
+	}
+}
+
+
+// ### STORY COMMENTS ###
+
+.story-comments {
+	margin: 4em 0;
+}
+
+.story-comments header {
+	@include respond-to(bp-medium) {
+		@include display(flex);
+		@include justify-content(space-between);
+		@include align-items(baseline)
+	}
+}
+
+.story-comments h2 {
+	@include respond-to(bp-medium) {
+		display: inline;
+	}
+
+	&:before {
+		font-family: FontAwesome;
+		content: $fa-var-comments;
+		margin-right: 0.3em;
+	}
+}
+
+a.new-comment-link {
+	@include respond-to(bp-small-only) {
+		display: block;
+		margin-bottom: 2em;
+	}
+	@include respond-to(bp-medium) {
+		margin-left: 1em;
+	}
+	color: inherit;
+	text-decoration: none;
+
+	&:after {
+		@extend .entry-icon;
+		content: $fa-var-arrow-circle-down;
+		margin: 0 0 0 0.3em;
+		color: inherit;
+	}
+	&:hover {
+		color: $brand-color-prim;
+	}
+}
+
+.story-comments-list {
+	list-style: none;
+	padding: 0;
+
+	> li {
+		margin: 0 0 3em;
+	}
+}
+
+.comment-author {
+	color: darken($text-color-prim, 10%);
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.comment-date {
+	color: $gray-mid-2;
+}
+
+.comment-content {
+	margin-top: -0.5em;
+	font-style: italic;
+}
+
+
+
+// ### NEW COMMENT ###
+
+.new-comment {
+	margin-top: 6em;
+}
+
+.new-comment h2 {
+	margin-bottom: 1em;
+
+	&:before {
+		font-family: FontAwesome;
+		content: $fa-var-comment;
+		margin-right: 0.3em;
+	}
+}
+
+.form-new-comment > div { // container für Maximalbreite der unteren Inputs
+	@include respond-to(bp-medium) {
+		max-width: 25em;
+	}
+}
+
+.label-comment {
+	font-size: 0.8em;
+	display: inline;
+	font-weight: normal;
+	color: $gray-mid-2; 
+}
+
+.captcha-container {
+	margin-bottom: 2em;
+	@include respond-to(bp-medium) {
+		@include display(flex);
+		@include align-items(center);
+	}
+}
+
+.captcha-container > img {
+	@include respond-to(bp-small-only) {
+		display: block;
+		margin: 0.5em 0 1em;
+	}
+	@include respond-to(bp-medium) {
+		margin-right: 1em;
+	}
+}
+
+.captcha-container > input {
+	max-width: 10em;
+}
