@@ -23,11 +23,19 @@
   }
 }
 
-.btn-action {
-
+.btn-sec {
   @extend .btn;
 
-  &:link, &:visited {}
+  &:link, &:visited {
+    background-color: $gray-mid-1;
+  }
+
+  &:hover {
+    background-color: desaturate($brand-color-prim,20%);
+  }
   
-  &:hover, &:active, &:focus {}
+  &:active, &:focus {
+    @include transform(translateY(2px));
+    border-bottom-color: transparent;
+  }
 }

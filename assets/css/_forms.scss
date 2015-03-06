@@ -1,6 +1,6 @@
 label {}
 
-input:not([type=submit]):not([type=file]) {
+input:not([type=submit]):not([type=file]):not([type=checkbox]) {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   width: 100%;
@@ -73,4 +73,10 @@ label span { // Beschriftung der Inputs
   display: block;
   margin: 1.5em 0 0.3em;
   font-weight: bold;
+}
+
+fieldset {
+  border: 0;
+  margin: 4em 0 0;
+  padding: 0;
 }

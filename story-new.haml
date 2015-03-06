@@ -1,0 +1,110 @@
+<!-- $title Geheimer Aufstieg | Alltagsspuren -->
+<!-- @include header -->
+
+.outside-wrapper
+	.content-wrapper
+		.content.page-story-new
+
+			%main.main-content
+
+				
+				%header.story-new-header
+					%h1 Neue Geschichte eintragen
+					%p Hier steht ein erklärender Text, der die Leute auffordern soll eine gute Geschichte zu schreiben und was von ihnen erwaret wird. Dieser Blindtext wird gerade durch 130 Millionen Rezeptoren Ihrer Netzhaut erfasst. Die Zellen werden dadurch in einen Link im Text Erregungszustand versetzt.
+
+
+				%form.form-story-new
+					%fieldset
+						%label
+							%span Titel der Geschichte*
+							%input(type="text" placeholder="" required)
+						%label
+							%span Ort der Geschichte (PLZ)*
+							%input(type="text" placeholder="PLZ eingeben und Gemeinde wählen" required)
+
+						.story-new-time
+							%div
+								%label
+									%span Ungefährer Zeitpunkt*
+									%select 
+										%option Jahrzehnt wählen
+										%option 2010 bis heute
+										%option 2000 bis 2009
+										%option 1990 bis 1999
+										%option 1980 bis 1989
+										%option 1970 bis 1979
+										%option 1960 bis 1969
+										%option 1950 bis 1959
+										%option 1940 bis 1949
+										%option 1930 bis 1939
+							%div
+								%label
+									%span Genauer Zeitpunkt
+									%select 
+										%option Jahr wählen
+										%option 2015
+										%option 2014
+										%option 2013
+										%option 2012
+										%option 2011
+										%option 2010
+						%label
+							%span Deine Mobilitätsgeschichte*
+							%textarea(rows="8")
+
+					%fieldset
+						%h2 Medienupload
+						%a.btn-sec(href="#") Datei auswählen
+						%span Info über mögliche Dateiformate und Größe
+
+						%label
+							%span Quellenangabe*
+							%input(type="text" placeholder="Quelle dieser Datei angeben" required)
+						.add-file
+							%a.btn-sec(href="#")
+								%i.fa.fa-plus
+								Weitere Datei hochladen
+
+					%fieldset
+						%h2 Video integrieren
+						%label
+							%span Link zu einem Video
+							%input(type="text" placeholder="z.B. youtube.com/watch?v=xQ_IQS3VKjA" required)
+
+					%fieldset
+						%h2 Wegetyp
+						%input(type="checkbox" id="schulweg")
+						%label.label-checkbox(for="schulweg") Schulweg<br>
+						%input(type="checkbox" id="arbeitsweg")
+						%label.label-checkbox(for="arbeitsweg") Arbeitsweg<br>
+						%input(type="checkbox" id="versorgungsweg")
+						%label.label-checkbox(for="versorgungsweg") Versorgungsweg<br>
+						%input(type="checkbox" id="freizeitweg")
+						%label.label-checkbox(for="freizeitweg") Freizeitweg<br>
+						%input(type="text" placeholder="Sonstiges" id="sonstiges")
+
+					%fieldset
+						%h2 Verkehrsmittel
+						%input(type="checkbox" id="fuss")
+						%label.label-checkbox(for="fuss") Zu Fuß<br>
+						%input(type="checkbox" id="rad")
+						%label.label-checkbox(for="rad") Fahrrad<br>
+						%input(type="checkbox" id="bus")
+						%label.label-checkbox(for="bus") Bus<br>
+						%input(type="checkbox" id="auto")
+						%label.label-checkbox(for="auto") Auto<br>
+						%input(type="text" placeholder="Sonstiges" id="sonstiges")
+
+					%fieldset
+						%div
+							%input(type="checkbox" id="email-me")
+							%label.label-checkbox(for="email-me") Ich möchte über neue Mobilitätsgeschichten in dieser Gemeinde per E-Mail benachrichtigt werden<br>
+							%input(type="checkbox" id="email-me-comments")
+							%label.label-checkbox(for="email-me-comments") Ich möchte über Kommentare zu meiner Geschichte per E-Mail benachrichtig werden
+
+						%a.btn-sec(href="#") Vorschau
+						%input(type="submit" value="Kommentar veröffentlichen")
+
+
+
+	<!-- @include footer -->

@@ -1,0 +1,44 @@
+// ### EINZELNE MOBILITÄTSGESCHICHTE-PAGE ###
+
+.page-story-new {
+	padding: 4em $inner-distance 4em;
+
+	@include respond-to(bp-large) {
+		@include outer-container;
+	}
+}
+
+.page-story-new .main-content {
+	@include respond-to(bp-large) {
+		@include span-columns(9);
+		@include shift(3);
+	}
+	@include respond-to(bp-xlarge) {
+		@include span-columns(7);
+	}
+}
+
+// ### FORMULAR //
+
+.form-story-new h2 {
+	margin-top: 0;
+	padding-bottom: 0.4em;
+	border-bottom: 3px solid $gray-light-2;
+}
+
+.story-new-time {
+	@include respond-to(bp-medium) {
+		@include outer-container;
+	}
+}
+.story-new-time > div {
+	@include respond-to(bp-medium) { // Zeit-Auswahl zeispaltig
+		@include span-columns(6);
+	}
+}
+
+.add-file {
+	margin-top: 1.2em;
+	border-top: 3px solid $gray-light-2;
+	padding-top: 1em;
+}
