@@ -77,6 +77,13 @@ label span { // Beschriftung der Inputs
 
 fieldset {
   border: 0;
-  margin: 4em 0 0;
+  margin: 0 0 4.5em;
   padding: 0;
+}
+
+.alert { // falls nicht ausgefüllt wurde
+  color: darken($alert-color,10%);
+  input {
+    border-color: $alert-color !important;
+  }
 }

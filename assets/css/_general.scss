@@ -31,7 +31,7 @@ body {
 }
 
 .outside-wrapper { // damit Cotainer bei kleineren Auflösungen nicht am Rand kleben
-	background: url(../img/bg/bg-grass-gradient.png) top left repeat-x; //fallback, falls liniear gradient nicht funktioniert
+	background: url(../img/bg/bg-grass-gradient-content.png) top left repeat-x; //fallback, falls liniear gradient nicht funktioniert
 	@include background(linear-gradient(#9daa3a, #828c30) top left repeat-x);
 	background-size: 1px 400px;
 

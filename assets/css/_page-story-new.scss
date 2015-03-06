@@ -1,21 +1,17 @@
 // ### EINZELNE MOBILITÄTSGESCHICHTE-PAGE ###
 
 .page-story-new {
-	padding: 4em $inner-distance 4em;
+	padding: 2em $inner-distance 4em;
 
 	@include respond-to(bp-large) {
+		padding-top: 4em;
 		@include outer-container;
 	}
 }
 
 .page-story-new .main-content {
-	@include respond-to(bp-large) {
-		@include span-columns(9);
-		@include shift(3);
-	}
-	@include respond-to(bp-xlarge) {
-		@include span-columns(7);
-	}
+	margin: 0 auto;
+	max-width: $max-width-text;
 }
 
 // ### FORMULAR //
@@ -42,3 +38,24 @@
 	border-top: 3px solid $gray-light-2;
 	padding-top: 1em;
 }
+
+.checkbox-group {
+	margin: 0.8em 0;
+	padding-left: 1.3em;
+	position: relative;
+	line-height: 1;
+}
+.checkbox-group input[type^="checkbox"] {
+	position: absolute;
+	left: 0;
+}
+
+input.sonstiges { // input
+	padding: 0.3em 0.5em !important;
+	max-width: 10em;
+}
+
+.form-story-new .notification {
+	margin-bottom: 3em;
+}
+

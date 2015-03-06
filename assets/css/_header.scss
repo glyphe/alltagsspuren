@@ -8,35 +8,36 @@
 	height: 70px;
 
 	@include respond-to(bp-medium) {
-		height: 160px;
+		height: 110px;
 	}
 	@include respond-to(bp-large) {
-		height: 220px;
+		height: 160px;
 	}
 	@include respond-to(bp-xlarge) {
-		height: 240px;
+		height: 180px;
 	}
 }
 
 .header-start .wrapper-header { // Nur auf der Startseite
-	height: 105px;
+	height: 120px;
 
 	@include respond-to(bp-medium) {
-		height: 240px;
+		height: 200px;
 	}
 	@include respond-to(bp-large) {
-		height: 330px;
+		height: 270px;
 	}
 	@include respond-to(bp-xlarge) {
-		height: 390px;
+		height: 300px;
 	}
 }
 
 .header {
 	@extend .outside-wrapper; // damit Cotainer bei kleineren Auflösungen nicht am Rand kleben
 	background-image: url(../img/bg/bg-header.png);
-	background-position: bottom -20px center;
+	background-position: bottom center;
 	background-repeat: repeat-x;
+	background-color: #aacfe6; // Fabre des Himmels
 	background-size: 800px;
 	
 	@include respond-to(bp-medium) {
@@ -67,14 +68,6 @@
 	position: absolute;
 	z-index: 200;
 	bottom: 0;
-
-	@include respond-to(bp-medium) {
-		bottom: 42px;
-	}
-	@include respond-to(bp-large) {
-		bottom: 50px;
-	}
-
 
 	img {
 		width: 100%;
@@ -182,6 +175,12 @@
 	a:link, a:visited {
 		text-decoration: none;
 		color: $brand-color-prim;
+	}
+	a:hover {
+		color: $nav-text-color-current;
+	}
+	a:active {
+		color: $text-color-prim;
 	}
 }
 

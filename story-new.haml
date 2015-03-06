@@ -58,7 +58,7 @@
 						%a.btn-sec(href="#") Datei auswählen
 						%span Info über mögliche Dateiformate und Größe
 
-						%label
+						%label.alert
 							%span Quellenangabe*
 							%input(type="text" placeholder="Quelle dieser Datei angeben" required)
 						.add-file
@@ -74,34 +74,44 @@
 
 					%fieldset
 						%h2 Wegetyp
-						%input(type="checkbox" id="schulweg")
-						%label.label-checkbox(for="schulweg") Schulweg<br>
-						%input(type="checkbox" id="arbeitsweg")
-						%label.label-checkbox(for="arbeitsweg") Arbeitsweg<br>
-						%input(type="checkbox" id="versorgungsweg")
-						%label.label-checkbox(for="versorgungsweg") Versorgungsweg<br>
-						%input(type="checkbox" id="freizeitweg")
-						%label.label-checkbox(for="freizeitweg") Freizeitweg<br>
-						%input(type="text" placeholder="Sonstiges" id="sonstiges")
+						.checkbox-group
+							%input(type="checkbox" id="schulweg")
+							%label.label-checkbox(for="schulweg") Schulweg
+						.checkbox-group
+							%input(type="checkbox" id="arbeitsweg")
+							%label.label-checkbox(for="arbeitsweg") Arbeitsweg
+						.checkbox-group
+							%input(type="checkbox" id="versorgungsweg")
+							%label.label-checkbox(for="versorgungsweg") Versorgungsweg
+						.checkbox-group
+							%input(type="checkbox" id="freizeitweg")
+							%label.label-checkbox(for="freizeitweg") Freizeitweg
+						%input.sonstiges(type="text" placeholder="Sonstiges" id="sonstiges")
 
 					%fieldset
 						%h2 Verkehrsmittel
-						%input(type="checkbox" id="fuss")
-						%label.label-checkbox(for="fuss") Zu Fuß<br>
-						%input(type="checkbox" id="rad")
-						%label.label-checkbox(for="rad") Fahrrad<br>
-						%input(type="checkbox" id="bus")
-						%label.label-checkbox(for="bus") Bus<br>
-						%input(type="checkbox" id="auto")
-						%label.label-checkbox(for="auto") Auto<br>
-						%input(type="text" placeholder="Sonstiges" id="sonstiges")
+						.checkbox-group
+							%input(type="checkbox" id="fuss")
+							%label.label-checkbox(for="fuss") Zu Fuß
+						.checkbox-group
+							%input(type="checkbox" id="rad")
+							%label.label-checkbox(for="rad") Fahrrad
+						.checkbox-group
+							%input(type="checkbox" id="bus")
+							%label.label-checkbox(for="bus") Bus
+						.checkbox-group
+							%input(type="checkbox" id="auto")
+							%label.label-checkbox(for="auto") Auto
+						%input.sonstiges(type="text" placeholder="Sonstiges" id="sonstiges")
 
 					%fieldset
-						%div
-							%input(type="checkbox" id="email-me")
-							%label.label-checkbox(for="email-me") Ich möchte über neue Mobilitätsgeschichten in dieser Gemeinde per E-Mail benachrichtigt werden<br>
-							%input(type="checkbox" id="email-me-comments")
-							%label.label-checkbox(for="email-me-comments") Ich möchte über Kommentare zu meiner Geschichte per E-Mail benachrichtig werden
+						.notification
+							.checkbox-group
+								%input(type="checkbox" id="email-me")
+								%label.label-checkbox(for="email-me") Ich möchte über neue Mobilitätsgeschichten in dieser Gemeinde per E-Mail benachrichtigt werden
+							.checkbox-group
+								%input(type="checkbox" id="email-me-comments")
+								%label.label-checkbox(for="email-me-comments") Ich möchte über Kommentare zu meiner Geschichte per E-Mail benachrichtig werden
 
 						%a.btn-sec(href="#") Vorschau
 						%input(type="submit" value="Kommentar veröffentlichen")
