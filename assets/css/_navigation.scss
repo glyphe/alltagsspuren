@@ -1,5 +1,13 @@
 // Hauptnavigation
 
+.nav {
+	@include respond-to(bp-medium) {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		z-index: 1000;
+	}
+}
 
 .nav-main {
 	background-color: $brand-color-contrast;
@@ -13,11 +21,6 @@
 	}
 }
 
-.nav {
-	@include respond-to(bp-medium) {
-
-	}
-}
 
 .nav-list {
 	@include respond-to(bp-small-only) {
@@ -123,7 +126,7 @@
 
 	cursor: pointer;
 	position: absolute;
-	top: 3px;
+	bottom: 16px;
 	right: $inner-distance;
 	padding: 0.5em 0.7em 0.4em;
 	background: $brand-color-contrast;

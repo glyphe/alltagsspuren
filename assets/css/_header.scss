@@ -1,11 +1,80 @@
 // Alles im Header
 
 
+// ### BACKGROUND ###
+
+.wrapper-header { // auf allen Seiten
+	@extend .wrapper;
+	height: 70px;
+
+	@include respond-to(bp-medium) {
+		height: 160px;
+	}
+	@include respond-to(bp-large) {
+		height: 220px;
+	}
+	@include respond-to(bp-xlarge) {
+		height: 240px;
+	}
+}
+
+.header-start .wrapper-header { // Nur auf der Startseite
+	height: 105px;
+
+	@include respond-to(bp-medium) {
+		height: 240px;
+	}
+	@include respond-to(bp-large) {
+		height: 330px;
+	}
+	@include respond-to(bp-xlarge) {
+		height: 390px;
+	}
+}
+
+.header {
+	@extend .outside-wrapper; // damit Cotainer bei kleineren Auflösungen nicht am Rand kleben
+	background-image: url(../img/bg/bg-header.png);
+	background-position: bottom -20px center;
+	background-repeat: repeat-x;
+	background-size: 800px;
+	
+	@include respond-to(bp-medium) {
+		background-size: 1400px;
+		background-position: bottom 0 center;
+	}
+	@include respond-to(bp-large) {
+		background-size: 1800px;
+	}
+	@include respond-to(bp-xlarge) {
+		background-size: 2080px;
+	}
+}
+
+.header-start {
+	@extend .header;
+	background-image: url(../img/bg/bg-header-start.png);
+}
+
+
+
+
 // #### LOGO ###
 
 .logo {
 	margin-left: $inner-distance;
 	width: 9em;
+	position: absolute;
+	z-index: 200;
+	bottom: 0;
+
+	@include respond-to(bp-medium) {
+		bottom: 42px;
+	}
+	@include respond-to(bp-large) {
+		bottom: 50px;
+	}
+
 
 	img {
 		width: 100%;
@@ -92,7 +161,7 @@
 
 	position: absolute;
 	right: $inner-distance;
-	top: -1em;
+	top: 1em;
 
 	@include respond-to(bp-large) {
 		right: $bg-ribbon-width;
@@ -122,13 +191,5 @@
 	margin-right: 0.3em;
 }
 
-// ### BACKGROUND ###
-
-.header {
-	@extend .outside-wrapper; // damit Cotainer bei kleineren Auflösungen nicht am Rand kleben
-	background: url(../img/bg/bg-header.png) bottom center repeat-x;
-	background-size: 2080px;
-	padding-top: 2em;
-}
 
 
