@@ -59,3 +59,10 @@ input.sonstiges { // input
 	margin-bottom: 3em;
 }
 
+.form-story-new .form-submit .btn-sec {
+  @include respond-to(bp-small-only) {
+    width: 100%;
+    padding: 0.8em;
+  }
+}
+
